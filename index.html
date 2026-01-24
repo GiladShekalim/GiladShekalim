@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gilad Shekalim | Software Engineer Portfolio</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --header-height: 4rem;
+            --hue: 210; 
+            --first-color: hsl(var(--hue), 100%, 60%);
+            --first-color-alt: hsl(var(--hue), 56%, 45%);
+            --title-color: hsl(228, 8%, 95%);
+            --text-color: hsl(228, 8%, 70%);
+            --body-color: hsl(228, 15%, 10%);
+            --container-color: hsl(228, 15%, 15%);
+            --body-font: "Poppins", sans-serif;
+        }
+
+        /* איפוס בסיסי */
+        * { box-sizing: border-box; padding: 0; margin: 0; }
+        a { text-decoration: none; } 
+        ul { list-style: none; } 
+
+        html { scroll-behavior: smooth; }
+        
+        body {
+            background-color: var(--body-color);
+            color: var(--text-color);
+            font-family: var(--body-font);
+            overflow-x: hidden;
+        }
+
+        .container { max-width: 1120px; margin: 0 auto; padding: 0 1.5rem; }
+        .grid { display: grid; gap: 1.5rem; }
+        .section { padding-block: 6rem 2rem; }
+
+        .header {
+            position: fixed; top: 0; left: 0; width: 100%;
+            background-color: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(10px); z-index: 100;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        
+        .nav { height: var(--header-height); display: flex; justify-content: space-between; align-items: center; }
+        .nav__logo { font-size: 1.25rem; font-weight: 700; color: #fff; }
+        .nav__logo span { color: var(--first-color); }
+        .nav__list { display: flex; column-gap: 2rem; }
+        .nav__link { color: var(--text-color); font-weight: 500; transition: .3s; }
+        .nav__link:hover { color: var(--first-color); }
+
+        /* --- HOME / HERO --- */
+        .home__container { 
+            padding-top: 4rem;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+        }
+        .home__content { text-align: left; }
+        .home__subtitle { font-size: 1.25rem; color: var(--first-color); font-weight: 600; margin-bottom: .5rem; }
+        .home__title { font-size: 3.5rem; margin-bottom: 1rem; color: #fff; }
+        .home__description { margin-bottom: 2.5rem; max-width: 450px; }
+
+        .home__img-box {
+            position: relative;
+            width: 320px; height: 400px;
+            background: var(--first-color);
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; 
+            overflow: hidden;
+            box-shadow: 0 0 50px rgba(59, 130, 246, 0.3);
+            justify-self: center;
+            transition: .4s;
+        }
+        .home__img-box:hover { border-radius: 50%; }
+        .home__img-box img { 
+            width: 100%; height: 100%; object-fit: cover; 
+            filter: grayscale(20%) contrast(110%);
+        }
+
+        .home__social { display: flex; gap: 1.5rem; margin-bottom: 2.5rem; }
+        .home__social-link { font-size: 1.5rem; color: var(--text-color); transition: .3s; }
+        .home__social-link:hover { color: var(--first-color); transform: translateY(-3px); }
+
+        /* --- SECTIONS --- */
+        .section__title { font-size: 2.25rem; margin-bottom: 3rem; text-align: left; }
+
+        /* Glassmorphism Cards */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 2.5rem; border-radius: 24px;
+            backdrop-filter: blur(10px);
+        }
+
+        /* Skills Styles - עיצוב חדש שמתאים לנראות */
+        .skills__container {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        .skills__title {
+            font-size: 1.25rem;
+            color: #fff;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: .5rem;
+        }
+        .skills__title i { color: var(--first-color); }
+        .skills__list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: .75rem;
+        }
+        .skill__tag {
+            background-color: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: .5rem 1rem;
+            border-radius: 50px;
+            font-size: .813rem;
+            color: var(--text-color);
+            transition: .3s;
+        }
+        .skill__tag:hover {
+            border-color: var(--first-color);
+            color: var(--first-color);
+            background-color: rgba(59, 130, 246, 0.1);
+        }
+
+        /* Timeline Style */
+        .timeline { border-left: 2px solid var(--first-color); padding-left: 2rem; position: relative; }
+        .timeline__item { position: relative; margin-bottom: 3rem; }
+        .timeline__item::before {
+            content: ''; position: absolute; left: -39px; top: 8px;
+            width: 12px; height: 12px; background: var(--body-color);
+            border: 3px solid var(--first-color); border-radius: 50%;
+        }
+
+        .button {
+            display: inline-flex; align-items: center; gap: .5rem;
+            background-color: var(--first-color); color: #fff;
+            padding: 1rem 2rem; border-radius: 50px; font-weight: 600;
+            transition: .3s;
+        }
+        .button:hover { background-color: var(--first-color-alt); transform: scale(1.05); }
+
+        .footer { padding-block: 4rem; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); }
+
+        @media screen and (max-width: 968px) {
+            .skills__container { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media screen and (max-width: 768px) {
+            .home__container { grid-template-columns: 1fr; text-align: center; }
+            .home__content { order: 2; }
+            .home__img-box { order: 1; margin-bottom: 3rem; width: 260px; height: 320px; }
+            .home__description { margin-inline: auto; }
+            .home__social { justify-content: center; }
+            .skills__container { grid-template-columns: 1fr; }
+        }
+        
+        @media screen and (max-width: 768px) {
+            
+            .home__title {
+                font-size: 2.2rem; 
+                line-height: 1.2;
+            }
+
+            .nav__logo {
+                font-size: 1rem;
+            }
+            
+            .nav__list {
+                column-gap: 1rem; 
+            }
+
+            .nav__link {
+                font-size: 0.8rem; 
+            }
+
+            .home__container {
+                padding-top: 2rem;
+            }
+
+            .section__title {
+                font-size: 1.75rem;
+            }
+
+            .skills__container {
+                grid-template-columns: 1fr; 
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <nav class="nav container">
+            <a href="#" class="nav__logo">ELI <span>LEVY</span></a>
+            <ul class="nav__list">
+                <li><a href="#home" class="nav__link">Home</a></li>
+                <li><a href="#about" class="nav__link">About</a></li>
+                <li><a href="#skills" class="nav__link">Skills</a></li>
+                <li><a href="#projects" class="nav__link">Projects</a></li>
+                <li><a href="#contact" class="nav__link">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main">
+        <section class="home section container" id="home">
+            <div class="home__container grid">
+                <div class="home__content">
+                    <span class="home__subtitle">Hello, I'm</span>
+                    <h1 class="home__title">Gilad Shekalim</h1>
+                    <p class="home__description">
+                        ADD INFORMATION worked as .... at <b>Radiflow</b> and Software Engineering student at <b>Afeka Academic College of Engineering in Tel-Aviv</b>. 
+                        I specialize in ............. backend development, system monitoring, and building modern web solutions.
+                    </p>
+                    
+                    <div class="home__social">
+                        <a href="https://github.com/ADD_LINKSSSSSSSSSSSS" target="_blank" class="home__social-link"><i class="ri-github-fill"></i></a>
+                        <a href="https://github.com/ADD_LINKSSSSSSSSSSSS" target="_blank" class="home__social-link"><i class="ri-linkedin-box-fill"></i></a>
+                        <a href="https://github.com/ADD_LINKSSSSSSSSSSSS" class="home__social-link"><i class="ri-mail-fill"></i></a>
+                    </div>
+
+                    <a href="ADD_CV_FILE_HERE.pdf" target="_blank" class="button">View CV <i class="ri-file-pdf-line"></i></a>
+                </div>
+
+                <div class="home__img-box">
+                    <img src="UPLOAD_IMAG_WITH_THE_NAME-Profile.jpg" alt="Eli Levy">
+                </div>
+            </div>
+        </section>
+
+        <section class="about section container" id="about">
+            <h2 class="section__title">About Me</h2>
+            <div class="glass-card">
+                <p>ABOUT ME SECTION</p>
+            </div>
+        </section>
+
+        <section class="skills section container" id="skills">
+            <h2 class="section__title">Skills</h2>
+            <div class="skills__container grid">
+                <div class="glass-card">
+                    <h3 class="skills__title"><i class="ri-code-line"></i> Languages & Core</h3>
+                    <div class="skills__list">
+                        <span class="skill__tag">Java</span>
+                        <span class="skill__tag">JavaScript</span>
+                        <span class="skill__tag">Kotlin</span>
+                        <span class="skill__tag">C++</span>
+                        <span class="skill__tag">C</span>
+                        <span class="skill__tag">Python</span>
+                        <span class="skill__tag">C#</span>
+                    </div>
+                </div>
+
+                <div class="glass-card">
+                    <h3 class="skills__title"><i class="ri-server-line"></i> Backend & Tools</h3>
+                    <div class="skills__list">
+                        <span class="skill__tag">Spring Boot</span>
+                        <span class="skill__tag">REST APIs</span>
+                        <span class="skill__tag">PostgreSQL</span>
+                        <span class="skill__tag">SupaBase</span>
+                        <span class="skill__tag">Redis</span>
+                        <span class="skill__tag">Docker</span>
+                        <span class="skill__tag">Linux</span>
+                        <span class="skill__tag">Git / GitHub</span>
+                    </div>
+                </div>
+
+                <div class="glass-card">
+                    <h3 class="skills__title"><i class="ri-cpu-line"></i> Embedded & IoT</h3>
+                    <div class="skills__list">
+                        <span class="skill__tag">ESP32</span>
+                        <span class="skill__tag">Arduino</span>
+                        <span class="skill__tag">IoT Prototyping</span>
+                        <span class="skill__tag">Home Lab / NAS</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="experience section container">
+            <h2 class="section__title">My Journey</h2>
+            <div class="timeline">
+                <div class="timeline__item" data-sr="fade-up">
+                    <h3 class="timeline__title">NOC Engineer</h3>
+                    <p style="color: var(--first-color); font-weight: 600;">NGsoft | 2025 - Present</p>
+                    <p>Managing high-scale network operations and ensuring critical system stability.</p>
+                </div>
+                <div class="timeline__item" data-sr="fade-up">
+                    <h3 class="timeline__title">B.Sc. Software Engineering</h3>
+                    <p style="color: var(--first-color); font-weight: 600;">Afeka College | 2021 - 2025</p>
+                    <p>Deep dive into algorithms, microservices, and modern software design patterns.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="projects section container" id="projects">
+            <h2 class="section__title">Featured Project</h2>
+            <div class="glass-card grid" style="grid-template-columns: 1fr 2fr; align-items: center;">
+                <div style="font-size: 4rem; color: var(--first-color); text-align: center;">
+                    <i class="ri-whatsapp-line"></i>
+                </div>
+                <div>
+                    <h3>WhatsApp Finance Bot 🤖</h3>
+                    <p>Automated financial assistant that syncs transactions to Excel using fuzzy search logic and provides visual data analytics.</p>
+                    <a href="https://github.com/Elilevy52/WhatsApp-finance-bot" target="_blank" style="color: var(--first-color); font-weight: 600; display: block; margin-top: 1rem;">View Code <i class="ri-arrow-right-line"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact section container" id="contact">
+            <h2 class="section__title">Get in Touch</h2>
+            <div class="glass-card">
+                <p>The best way to reach me is by email or via LinkedIn.</p>
+                <div style="margin-top: 2rem; display: flex; gap: 2rem;">
+                   <a href="mailto:elilevy147@gmail.com" style="color: var(--first-color); font-weight: 600;"><i class="ri-mail-line"></i> Email Me</a>
+                   <a href="https://linkedin.com/in/eli-levy-114071187" target="_blank" style="color: var(--first-color); font-weight: 600;"><i class="ri-linkedin-box-line"></i> LinkedIn</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer container">
+        <p>Made with <i class="ri-heart-fill" style="color: red;"></i> by Eli Levy &copy; 2026</p>
+    </footer>
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script>
+        const sr = ScrollReveal({
+            origin: 'top',
+            distance: '60px',
+            duration: 2500,
+            delay: 400,
+            reset: true
+        });
+
+        sr.reveal(`.home__content, .home__img-box, .section__title`);
+        sr.reveal(`.glass-card`, {delay: 600, origin: 'bottom'});
+        sr.reveal(`.timeline__item`, {interval: 100});
+    </script>
+</body>
+</html>
