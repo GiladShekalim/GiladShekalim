@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gilad Shekalim | Software Engineer Portfolio</title>
+    <title>Gilad Shekalim | Agentic AI Engineer</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
@@ -11,7 +11,7 @@
     <style>
         :root {
             --header-height: 4rem;
-            --hue: 210; 
+            --hue: 210;
             --first-color: hsl(var(--hue), 100%, 60%);
             --first-color-alt: hsl(var(--hue), 56%, 45%);
             --title-color: hsl(228, 8%, 95%);
@@ -21,13 +21,12 @@
             --body-font: "Poppins", sans-serif;
         }
 
-        /* איפוס בסיסי */
         * { box-sizing: border-box; padding: 0; margin: 0; }
-        a { text-decoration: none; } 
-        ul { list-style: none; } 
+        a { text-decoration: none; }
+        ul { list-style: none; }
 
         html { scroll-behavior: smooth; }
-        
+
         body {
             background-color: var(--body-color);
             color: var(--text-color);
@@ -45,7 +44,7 @@
             backdrop-filter: blur(10px); z-index: 100;
             border-bottom: 1px solid rgba(255,255,255,0.05);
         }
-        
+
         .nav { height: var(--header-height); display: flex; justify-content: space-between; align-items: center; }
         .nav__logo { font-size: 1.25rem; font-weight: 700; color: #fff; }
         .nav__logo span { color: var(--first-color); }
@@ -54,7 +53,7 @@
         .nav__link:hover { color: var(--first-color); }
 
         /* --- HOME / HERO --- */
-        .home__container { 
+        .home__container {
             padding-top: 4rem;
             grid-template-columns: 1fr 1fr;
             align-items: center;
@@ -62,21 +61,21 @@
         .home__content { text-align: left; }
         .home__subtitle { font-size: 1.25rem; color: var(--first-color); font-weight: 600; margin-bottom: .5rem; }
         .home__title { font-size: 3.5rem; margin-bottom: 1rem; color: #fff; }
-        .home__description { margin-bottom: 2.5rem; max-width: 450px; }
+        .home__description { margin-bottom: 2.5rem; max-width: 450px; line-height: 1.8; }
 
         .home__img-box {
             position: relative;
             width: 320px; height: 400px;
             background: var(--first-color);
-            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; 
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
             overflow: hidden;
             box-shadow: 0 0 50px rgba(59, 130, 246, 0.3);
             justify-self: center;
             transition: .4s;
         }
         .home__img-box:hover { border-radius: 50%; }
-        .home__img-box img { 
-            width: 100%; height: 100%; object-fit: cover; 
+        .home__img-box img {
+            width: 100%; height: 100%; object-fit: cover;
             filter: grayscale(20%) contrast(110%);
         }
 
@@ -95,32 +94,29 @@
             backdrop-filter: blur(10px);
         }
 
-        /* Skills Styles - עיצוב חדש שמתאים לנראות */
-        .skills__container {
-            grid-template-columns: repeat(3, 1fr);
+        /* About */
+        .about__card p {
+            line-height: 1.9;
+            font-size: 1rem;
         }
+        .about__card p + p {
+            margin-top: 1rem;
+        }
+
+        /* Skills */
+        .skills__container { grid-template-columns: repeat(3, 1fr); }
         .skills__title {
-            font-size: 1.25rem;
-            color: #fff;
+            font-size: 1.25rem; color: #fff;
             margin-bottom: 1.5rem;
-            display: flex;
-            align-items: center;
-            gap: .5rem;
+            display: flex; align-items: center; gap: .5rem;
         }
         .skills__title i { color: var(--first-color); }
-        .skills__list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: .75rem;
-        }
+        .skills__list { display: flex; flex-wrap: wrap; gap: .75rem; }
         .skill__tag {
             background-color: rgba(255, 255, 255, 0.05);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: .5rem 1rem;
-            border-radius: 50px;
-            font-size: .813rem;
-            color: var(--text-color);
-            transition: .3s;
+            padding: .5rem 1rem; border-radius: 50px;
+            font-size: .813rem; color: var(--text-color); transition: .3s;
         }
         .skill__tag:hover {
             border-color: var(--first-color);
@@ -128,7 +124,7 @@
             background-color: rgba(59, 130, 246, 0.1);
         }
 
-        /* Timeline Style */
+        /* Timeline */
         .timeline { border-left: 2px solid var(--first-color); padding-left: 2rem; position: relative; }
         .timeline__item { position: relative; margin-bottom: 3rem; }
         .timeline__item::before {
@@ -136,6 +132,37 @@
             width: 12px; height: 12px; background: var(--body-color);
             border: 3px solid var(--first-color); border-radius: 50%;
         }
+        .timeline__title { color: #fff; font-size: 1.1rem; margin-bottom: .3rem; }
+        .timeline__company { color: var(--first-color); font-weight: 600; margin-bottom: .75rem; display: block; }
+        .timeline__list { padding-left: 1rem; }
+        .timeline__list li { list-style: disc; margin-bottom: .4rem; font-size: .9rem; line-height: 1.7; }
+        .timeline__tags { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .75rem; }
+        .timeline__tag {
+            background-color: rgba(59, 130, 246, 0.1);
+            border: 1px solid rgba(59, 130, 246, 0.25);
+            color: var(--first-color); font-size: .75rem;
+            padding: .25rem .75rem; border-radius: 50px;
+        }
+
+        /* Projects */
+        .projects__grid { grid-template-columns: repeat(3, 1fr); }
+        .project__card { display: flex; flex-direction: column; gap: .75rem; }
+        .project__icon { font-size: 2.5rem; color: var(--first-color); }
+        .project__title { font-size: 1.05rem; color: #fff; font-weight: 600; }
+        .project__tags { display: flex; flex-wrap: wrap; gap: .4rem; }
+        .project__tag {
+            background-color: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: .2rem .7rem; border-radius: 50px;
+            font-size: .75rem; color: var(--text-color);
+        }
+        .project__link {
+            color: var(--first-color); font-weight: 600;
+            margin-top: auto; display: inline-flex;
+            align-items: center; gap: .3rem; font-size: .9rem;
+            transition: .3s;
+        }
+        .project__link:hover { gap: .6rem; }
 
         .button {
             display: inline-flex; align-items: center; gap: .5rem;
@@ -149,6 +176,7 @@
 
         @media screen and (max-width: 968px) {
             .skills__container { grid-template-columns: repeat(2, 1fr); }
+            .projects__grid { grid-template-columns: repeat(2, 1fr); }
         }
 
         @media screen and (max-width: 768px) {
@@ -158,38 +186,13 @@
             .home__description { margin-inline: auto; }
             .home__social { justify-content: center; }
             .skills__container { grid-template-columns: 1fr; }
-        }
-        
-        @media screen and (max-width: 768px) {
-            
-            .home__title {
-                font-size: 2.2rem; 
-                line-height: 1.2;
-            }
-
-            .nav__logo {
-                font-size: 1rem;
-            }
-            
-            .nav__list {
-                column-gap: 1rem; 
-            }
-
-            .nav__link {
-                font-size: 0.8rem; 
-            }
-
-            .home__container {
-                padding-top: 2rem;
-            }
-
-            .section__title {
-                font-size: 1.75rem;
-            }
-
-            .skills__container {
-                grid-template-columns: 1fr; 
-            }
+            .projects__grid { grid-template-columns: 1fr; }
+            .home__title { font-size: 2.2rem; line-height: 1.2; }
+            .nav__logo { font-size: 1rem; }
+            .nav__list { column-gap: 1rem; }
+            .nav__link { font-size: 0.8rem; }
+            .home__container { padding-top: 2rem; }
+            .section__title { font-size: 1.75rem; }
         }
     </style>
 </head>
@@ -197,11 +200,12 @@
 
     <header class="header">
         <nav class="nav container">
-            <a href="#" class="nav__logo">ELI <span>LEVY</span></a>
+            <a href="#" class="nav__logo">Gilad <span>Shekalim</span></a>
             <ul class="nav__list">
                 <li><a href="#home" class="nav__link">Home</a></li>
                 <li><a href="#about" class="nav__link">About</a></li>
                 <li><a href="#skills" class="nav__link">Skills</a></li>
+                <li><a href="#experience" class="nav__link">Experience</a></li>
                 <li><a href="#projects" class="nav__link">Projects</a></li>
                 <li><a href="#contact" class="nav__link">Contact</a></li>
             </ul>
@@ -212,32 +216,44 @@
         <section class="home section container" id="home">
             <div class="home__container grid">
                 <div class="home__content">
-                    <span class="home__subtitle">Hello, I'm</span>
+                    <span class="home__subtitle">Tel Aviv, Israel</span>
                     <h1 class="home__title">Gilad Shekalim</h1>
                     <p class="home__description">
-                        ADD INFORMATION worked as .... at <b>Radiflow</b> and Software Engineering student at <b>Afeka Academic College of Engineering in Tel-Aviv</b>. 
-                        I specialize in ............. backend development, system monitoring, and building modern web solutions.
+                        <b>Agentic AI &amp; Automation Engineer</b> at <b>Elyonx</b> — building autonomous agents and LLM orchestration pipelines.
                     </p>
-                    
+
                     <div class="home__social">
-                        <a href="https://github.com/ADD_LINKSSSSSSSSSSSS" target="_blank" class="home__social-link"><i class="ri-github-fill"></i></a>
-                        <a href="https://github.com/ADD_LINKSSSSSSSSSSSS" target="_blank" class="home__social-link"><i class="ri-linkedin-box-fill"></i></a>
-                        <a href="https://github.com/ADD_LINKSSSSSSSSSSSS" class="home__social-link"><i class="ri-mail-fill"></i></a>
+                        <a href="https://github.com/GiladShekalim" target="_blank" class="home__social-link"><i class="ri-github-fill"></i></a>
+                        <a href="https://linkedin.com/in/gilad-shekalim" target="_blank" class="home__social-link"><i class="ri-linkedin-box-fill"></i></a>
+                        <a href="mailto:giladshekalim@gmail.com" class="home__social-link"><i class="ri-mail-fill"></i></a>
                     </div>
 
-                    <a href="ADD_CV_FILE_HERE.pdf" target="_blank" class="button">View CV <i class="ri-file-pdf-line"></i></a>
+                    <a href="Shekalim_Gilad-CV-2026.docx.pdf" download class="button">Download CV <i class="ri-file-pdf-line"></i></a>
                 </div>
 
                 <div class="home__img-box">
-                    <img src="UPLOAD_IMAG_WITH_THE_NAME-Profile.jpg" alt="Eli Levy">
+                    <img src="profile.png" alt="Gilad Shekalim">
                 </div>
             </div>
         </section>
 
         <section class="about section container" id="about">
             <h2 class="section__title">About Me</h2>
-            <div class="glass-card">
-                <p>ABOUT ME SECTION</p>
+            <div class="glass-card about__card">
+                <p>
+                    The technical range — AI systems, backend, QA automation, mobile, and more —
+                    comes from a habit of learning each layer until it's understood well enough to own it.
+                    Not collecting skills, but building a complete picture of how software gets made.
+                </p>
+                <p>
+                    Has taken projects from zero to one — architecting from a blank document, planning the build,
+                    and seeing it through to deployment. Worked across the full stack in real production environments and
+                    knows how to scope, structure, and ship.
+                </p>
+                <p>
+                    Takes ownership seriously. Always digging into the next layer.
+                    Based in Tel Aviv, open to relocation — looking for roles where breadth and end-to-end ownership are an asset.
+                </p>
             </div>
         </section>
 
@@ -245,88 +261,202 @@
             <h2 class="section__title">Skills</h2>
             <div class="skills__container grid">
                 <div class="glass-card">
-                    <h3 class="skills__title"><i class="ri-code-line"></i> Languages & Core</h3>
+                    <h3 class="skills__title"><i class="ri-robot-line"></i> AI &amp; Agentic Systems</h3>
                     <div class="skills__list">
-                        <span class="skill__tag">Java</span>
-                        <span class="skill__tag">JavaScript</span>
-                        <span class="skill__tag">Kotlin</span>
-                        <span class="skill__tag">C++</span>
-                        <span class="skill__tag">C</span>
-                        <span class="skill__tag">Python</span>
-                        <span class="skill__tag">C#</span>
+                        <span class="skill__tag">LLM Orchestration</span>
+                        <span class="skill__tag">Autonomous Agents</span>
+                        <span class="skill__tag">Multi-agent Systems</span>
+                        <span class="skill__tag">MCP</span>
+                        <span class="skill__tag">Agentic Frameworks</span>
+                        <span class="skill__tag">RAG</span>
+                        <span class="skill__tag">AI Evals & Observability</span>
+                        <span class="skill__tag">PyTorch</span>
+                        <span class="skill__tag">NumPy / Jupyter</span>
+                        <span class="skill__tag">Formal Verification</span>
                     </div>
                 </div>
 
                 <div class="glass-card">
-                    <h3 class="skills__title"><i class="ri-server-line"></i> Backend & Tools</h3>
+                    <h3 class="skills__title"><i class="ri-server-line"></i> Backend &amp; Automation</h3>
                     <div class="skills__list">
+                        <span class="skill__tag">Python</span>
+                        <span class="skill__tag">FastAPI</span>
                         <span class="skill__tag">Spring Boot</span>
                         <span class="skill__tag">REST APIs</span>
-                        <span class="skill__tag">PostgreSQL</span>
-                        <span class="skill__tag">SupaBase</span>
-                        <span class="skill__tag">Redis</span>
                         <span class="skill__tag">Docker</span>
-                        <span class="skill__tag">Linux</span>
-                        <span class="skill__tag">Git / GitHub</span>
+                        <span class="skill__tag">System Design</span>
+                        <span class="skill__tag">Event-driven Architecture</span>
+                        <span class="skill__tag">CI/CD</span>
+                        <span class="skill__tag">Playwright</span>
+                        <span class="skill__tag">Pytest</span>
+                        <span class="skill__tag">Jenkins</span>
+                        <span class="skill__tag">MySQL / MongoDB</span>
                     </div>
                 </div>
 
                 <div class="glass-card">
-                    <h3 class="skills__title"><i class="ri-cpu-line"></i> Embedded & IoT</h3>
+                    <h3 class="skills__title"><i class="ri-code-line"></i> Languages &amp; Tools</h3>
                     <div class="skills__list">
-                        <span class="skill__tag">ESP32</span>
-                        <span class="skill__tag">Arduino</span>
-                        <span class="skill__tag">IoT Prototyping</span>
-                        <span class="skill__tag">Home Lab / NAS</span>
+                        <span class="skill__tag">Java</span>
+                        <span class="skill__tag">Kotlin</span>
+                        <span class="skill__tag">TypeScript</span>
+                        <span class="skill__tag">C / C++</span>
+                        <span class="skill__tag">JavaScript</span>
+                        <span class="skill__tag">Git / GitHub</span>
+                        <span class="skill__tag">Linux</span>
+                        <span class="skill__tag">STM32 / Arduino</span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="experience section container">
-            <h2 class="section__title">My Journey</h2>
+        <section class="experience section container" id="experience">
+            <h2 class="section__title">Experience</h2>
             <div class="timeline">
-                <div class="timeline__item" data-sr="fade-up">
-                    <h3 class="timeline__title">NOC Engineer</h3>
-                    <p style="color: var(--first-color); font-weight: 600;">NGsoft | 2025 - Present</p>
-                    <p>Managing high-scale network operations and ensuring critical system stability.</p>
+
+                <div class="timeline__item">
+                    <h3 class="timeline__title">Agentic AI &amp; Automation Engineer</h3>
+                    <span class="timeline__company">Elyonx &nbsp;|&nbsp; 2025 – Present</span>
+                    <ul class="timeline__list">
+                        <li>Engineered multi-agent systems and LLM orchestration workflows to automate complex, multi-step decision-making processes.</li>
+                        <li>Developed scalable automation pipelines within the MAGISTER project, improving system efficiency, data processing, and task execution.</li>
+                    </ul>
+                    <div class="timeline__tags">
+                        <span class="timeline__tag">Python</span>
+                        <span class="timeline__tag">PyTorch</span>
+                        <span class="timeline__tag">LLM Orchestration</span>
+                        <span class="timeline__tag">Autonomous Agents</span>
+                        <span class="timeline__tag">NumPy</span>
+                        <span class="timeline__tag">AI Observability</span>
+                    </div>
                 </div>
-                <div class="timeline__item" data-sr="fade-up">
+
+                <div class="timeline__item">
+                    <h3 class="timeline__title">Automation QA Engineer</h3>
+                    <span class="timeline__company">Radiflow &nbsp;|&nbsp; 2022 – December 2024</span>
+                    <ul class="timeline__list">
+                        <li>Developed and maintained comprehensive automated test suites for frontend, backend, and API validation across multiple environments.</li>
+                        <li>Collaborated on CI/CD pipeline implementation, version control, and code reviews to enhance deployment efficiency.</li>
+                    </ul>
+                    <div class="timeline__tags">
+                        <span class="timeline__tag">Playwright</span>
+                        <span class="timeline__tag">Pytest</span>
+                        <span class="timeline__tag">Jenkins</span>
+                        <span class="timeline__tag">Docker</span>
+                        <span class="timeline__tag">Spring Boot</span>
+                        <span class="timeline__tag">Java</span>
+                        <span class="timeline__tag">Postman</span>
+                    </div>
+                </div>
+
+                <div class="timeline__item">
                     <h3 class="timeline__title">B.Sc. Software Engineering</h3>
-                    <p style="color: var(--first-color); font-weight: 600;">Afeka College | 2021 - 2025</p>
-                    <p>Deep dive into algorithms, microservices, and modern software design patterns.</p>
+                    <span class="timeline__company">Afeka Academic College of Engineering &nbsp;|&nbsp; 2019 – Present</span>
+                    <ul class="timeline__list">
+                        <li>Cyber &amp; AI track: LTL/CTL formal verification, Z3 SMT solvers, PyTorch CNNs, Monte Carlo uncertainty quantification, OT security.</li>
+                        <li>Notable projects: AI Agent Atlas (LLM orchestration), FlagAI (large-scale models), IntelliShop capstone (microservices, NoSQL, Security Manager).</li>
+                        <li>Advanced coursework: Machine Learning, Parallel &amp; Distributed Computing, Advanced Algorithms, OOD, Integrative Software Engineering.</li>
+                    </ul>
                 </div>
+
+                <div class="timeline__item">
+                    <h3 class="timeline__title">Intelligence &amp; Investigation Coordinator</h3>
+                    <span class="timeline__company">IDF – Investigation Division &nbsp;|&nbsp; 2017 – 2019</span>
+                    <ul class="timeline__list">
+                        <li>Defined, deployed, and operated advanced data collection systems (SW &amp; HW) in a high-stakes operational environment.</li>
+                        <li>Monitored and analyzed intelligence data under time pressure, developing strong analytical discipline and structured thinking.</li>
+                    </ul>
+                </div>
+
             </div>
         </section>
 
         <section class="projects section container" id="projects">
-            <h2 class="section__title">Featured Project</h2>
-            <div class="glass-card grid" style="grid-template-columns: 1fr 2fr; align-items: center;">
-                <div style="font-size: 4rem; color: var(--first-color); text-align: center;">
-                    <i class="ri-whatsapp-line"></i>
+            <h2 class="section__title">Projects</h2>
+            <div class="projects__grid grid">
+
+                <div class="glass-card project__card">
+                    <div class="project__icon"><i class="ri-store-3-line"></i></div>
+                    <h3 class="project__title">IntelliShop</h3>
+                    <p>Final-year capstone — full-scale e-commerce platform built on Python microservices, NoSQL data orchestration, and a strict Security Manager.</p>
+                    <div class="project__tags">
+                        <span class="project__tag">System Design</span>
+                        <span class="project__tag">Python</span>
+                        <span class="project__tag">Microservices</span>
+                        <span class="project__tag">NoSQL</span>
+                        <span class="project__tag">Security</span>
+                    </div>
+                    <a href="https://github.com/GiladShekalim/Intelli_Shop" target="_blank" class="project__link">View Code <i class="ri-arrow-right-line"></i></a>
                 </div>
-                <div>
-                    <h3>WhatsApp Finance Bot 🤖</h3>
-                    <p>Automated financial assistant that syncs transactions to Excel using fuzzy search logic and provides visual data analytics.</p>
-                    <a href="https://github.com/Elilevy52/WhatsApp-finance-bot" target="_blank" style="color: var(--first-color); font-weight: 600; display: block; margin-top: 1rem;">View Code <i class="ri-arrow-right-line"></i></a>
+
+                <div class="glass-card project__card">
+                    <div class="project__icon"><i class="ri-whatsapp-line"></i></div>
+                    <h3 class="project__title">Book Haircut at Edna</h3>
+                    <p>Conversational booking bot — WhatsApp Cloud API webhook (FastAPI) that reads intent and creates Google Calendar events with confirmation messages.</p>
+                    <div class="project__tags">
+                        <span class="project__tag">FastAPI</span>
+                        <span class="project__tag">WhatsApp API</span>
+                        <span class="project__tag">Google Calendar</span>
+                        <span class="project__tag">Python</span>
+                    </div>
+                    <a href="https://github.com/GiladShekalim/Book_Haircut_at_Edna" target="_blank" class="project__link">View Code <i class="ri-arrow-right-line"></i></a>
                 </div>
+
+                <div class="glass-card project__card">
+                    <div class="project__icon"><i class="ri-calendar-check-line"></i></div>
+                    <h3 class="project__title">Afeka Exams Format Converter</h3>
+                    <p>TypeScript app that parses Afeka's exam schedules and converts them into calendar-ready format for one-click import — used by students across the college.</p>
+                    <div class="project__tags">
+                        <span class="project__tag">TypeScript</span>
+                        <span class="project__tag">Calendar API</span>
+                        <span class="project__tag">Automation</span>
+                    </div>
+                    <a href="https://github.com/GiladShekalim/Afeka_exams_Format_Converter" target="_blank" class="project__link">View Code <i class="ri-arrow-right-line"></i></a>
+                </div>
+
+                <div class="glass-card project__card">
+                    <div class="project__icon"><i class="ri-shield-keyhole-line"></i></div>
+                    <h3 class="project__title">STM32 Embedded Safe System</h3>
+                    <p>Digital safe system on STM32 — remote configuration over UART, LCD interface, and a state machine managing LOCKED/UNLOCKED transitions.</p>
+                    <div class="project__tags">
+                        <span class="project__tag">C</span>
+                        <span class="project__tag">STM32</span>
+                        <span class="project__tag">UART</span>
+                        <span class="project__tag">Embedded</span>
+                    </div>
+                    <a href="https://github.com/GiladShekalim/stm32-embedded-safe-system" target="_blank" class="project__link">View Code <i class="ri-arrow-right-line"></i></a>
+                </div>
+
+<div class="glass-card project__card">
+                    <div class="project__icon"><i class="ri-smartphone-line"></i></div>
+                    <h3 class="project__title">Race Android App</h3>
+                    <p>Native Android racing game built in Kotlin — real-time sensor input, game-loop architecture, and leaderboard persistence.</p>
+                    <div class="project__tags">
+                        <span class="project__tag">Kotlin</span>
+                        <span class="project__tag">Android</span>
+                        <span class="project__tag">Sensors</span>
+                    </div>
+                    <a href="https://github.com/GiladShekalim/race_andr_app" target="_blank" class="project__link">View Code <i class="ri-arrow-right-line"></i></a>
+                </div>
+
             </div>
         </section>
 
         <section class="contact section container" id="contact">
             <h2 class="section__title">Get in Touch</h2>
             <div class="glass-card">
-                <p>The best way to reach me is by email or via LinkedIn.</p>
-                <div style="margin-top: 2rem; display: flex; gap: 2rem;">
-                   <a href="mailto:elilevy147@gmail.com" style="color: var(--first-color); font-weight: 600;"><i class="ri-mail-line"></i> Email Me</a>
-                   <a href="https://linkedin.com/in/eli-levy-114071187" target="_blank" style="color: var(--first-color); font-weight: 600;"><i class="ri-linkedin-box-line"></i> LinkedIn</a>
+                <p>Open to engineering roles where broad technical range and full ownership matter. Happy to talk AI systems, architecture, or interesting builds. Best reached by email or LinkedIn.</p>
+                <div style="margin-top: 2rem; display: flex; gap: 2rem; flex-wrap: wrap;">
+                    <a href="mailto:giladshekalim@gmail.com" style="color: var(--first-color); font-weight: 600;"><i class="ri-mail-line"></i> giladshekalim@gmail.com</a>
+                    <a href="https://linkedin.com/in/gilad-shekalim" target="_blank" style="color: var(--first-color); font-weight: 600;"><i class="ri-linkedin-box-line"></i> LinkedIn</a>
+                    <a href="https://github.com/GiladShekalim" target="_blank" style="color: var(--first-color); font-weight: 600;"><i class="ri-github-line"></i> GitHub</a>
                 </div>
             </div>
         </section>
     </main>
 
     <footer class="footer container">
-        <p>Made with <i class="ri-heart-fill" style="color: red;"></i> by Eli Levy &copy; 2026</p>
+        <p>Made with <i class="ri-heart-fill" style="color: red;"></i> by Gilad Shekalim &copy; 2026</p>
     </footer>
 
     <script src="https://unpkg.com/scrollreveal"></script>
